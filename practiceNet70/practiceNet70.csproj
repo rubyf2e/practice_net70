@@ -20,8 +20,10 @@
 
   <ItemGroup>
     <None Remove="Models\Seeder\" />
+    <None Remove="Areas\Identity\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Seeder\" />
+    <Folder Include="Areas\Identity\Data\" />
   </ItemGroup>
 </Project>
