@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using practice_net70.Data;
+using practiceNet70.Data;
 
 #nullable disable
 
-namespace practice_net70.Migrations
+namespace practiceNet70.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230322180520_InitialCreate")]
@@ -216,7 +216,7 @@ namespace practice_net70.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("practice_net70.Models.Movie", b =>
+            modelBuilder.Entity("practiceNet70.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

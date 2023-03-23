@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using practice_net70.Models;
+using practiceNet70.Models;
 
-namespace practice_net70.Data;
+namespace practiceNet70.Data;
 
 public class ApplicationDbContext : IdentityDbContext
 {
@@ -10,6 +10,6 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
-    public DbSet<practice_net70.Models.Movie> Movie { get; set; } = default!;
+    public DbSet<practiceNet70.Models.Movie> Movie { get; set; } = default!;
 }
 

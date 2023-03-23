@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using practice_net70.Data;
-using practice_net70.Models;
+using practiceNet70.Data;
+using practiceNet70.Models;
 
-namespace practice_net70.Controllers;
+namespace practiceNet70.Controllers;
 
 public class HomeController : Controller
 {

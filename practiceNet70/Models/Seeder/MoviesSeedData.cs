@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using practice_net70.Data;
+using practiceNet70.Data;
 
-namespace practice_net70.Models.Seeder
+namespace practiceNet70.Models.Seeder
 {
 	public class MoviesSeedData
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace practice_net70.Models
+namespace practiceNet70.Models
 {
 	public class Movie
 	{

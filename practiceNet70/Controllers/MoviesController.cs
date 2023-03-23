@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using practice_net70.Data;
-using practice_net70.Models;
+using practiceNet70.Data;
+using practiceNet70.Models;
 
-namespace practice_net70.Controllers
+namespace practiceNet70.Controllers
 {
     public class MoviesController : Controller
     {
