@@ -6,10 +6,9 @@
 @if (SignInManager.IsSignedIn(User))
 {
     User user = await UserManager.GetUserAsync(User);
-    var FullName = $"{user?.Name}";
-
+    var FullName = $"{user?.UserName}  {user?.Name}";
     <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @FullName</a>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @FullName</a>
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

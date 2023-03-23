@@ -11,6 +11,9 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole, string
         : base(options)
     {
     }
+
     public DbSet<practiceNet70.Models.Movie> Movie { get; set; } = default!;
+    public DbSet<practiceNet70.Models.User> User { get; set; } = default!;
+
 }
 
