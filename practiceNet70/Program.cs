@@ -54,7 +54,7 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<ApplicationDbContext>();
     context.Database.Migrate();
-    var testUserPw = builder.Configuration.GetValue<string>("SeedUserPW");
+    var testUserPw = builder.Configuration.GetValue<string>("SeedUserPW") ?? "Secret123@";
 
     await UsersSeedData.Initialize(services, testUserPw);
 }
