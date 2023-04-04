@@ -1,8 +1,8 @@
 # practice_net70
 .NET Framework 7.0 練習
 
-為了部署這個專案，我把 Ubuntu 從 16.04 升級到 18.04
-花了一天了解 .NET Framework 7.0 的基本架構和用法
+為了部署這個專案，我把 Ubuntu 從 16.04 升級到 18.04.   
+花了一天了解 .NET Framework 7.0 的基本架構和用法.    
 花了一天將專案部署在 ubuntu 上和爬文件
 
 
