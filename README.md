@@ -1,10 +1,13 @@
 # practice_net70
 .NET Framework 7.0 練習
 
+為了部署這個專案，我把 Ubuntu 從 16.04 升級到 18.04
+
 
 ```
 dotnet ef database update
 dotnet user-secrets set SeedUserPW Secret123@
+dotnet run --environment Production
 dotnet publish --configuration Release
 dotnet bin/Release/net7.0/practiceNet70.dll
 
