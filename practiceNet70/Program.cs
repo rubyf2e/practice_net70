@@ -28,6 +28,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 var app = builder.Build();
+app.UsePathBase("/practice_net70");
 
 using (var scope = app.Services.CreateScope())
 {
