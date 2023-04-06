@@ -39,3 +39,42 @@ Buyer 帳密： Buyer@example.com / Secret123@
     }
 ```
 
+## service
+```
+[Unit]
+Description=practice_net70
+
+[Service]
+WorkingDirectory=/var/www/practice_net70/practiceNet70/bin/Release/net7.0/
+ExecStart=/usr/bin/dotnet /var/www/practice_net70/practiceNet70/bin/Release/net7.0/practiceNet70.dll
+
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=practice_net70
+User=root
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
+```
+### service 的一些指令
+```
+cp /var/www/practice_net70/practiceNet70/app.db /var/www/practice_net70/practiceNet70/bin/Release/net7.0/app.db
+
+sudo vi /etc/systemd/system/practice_net70.service
+systemctl daemon-reload
+sudo systemctl start practice_net70.service
+sudo systemctl status practice_net70.service
+systemd-analyze log-level debug 
+systemd-escape "<value-to-escape>"
+sudo journalctl -fu practice_net70.service
+
+dotnet tool install -g dotnet-dump
+dotnet-dump ps
+```
+
+
+
