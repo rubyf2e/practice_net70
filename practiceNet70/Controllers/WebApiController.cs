@@ -15,10 +15,12 @@ namespace practiceNet70.Controllers
 {
     public class WebApiController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public WebApiController(IHttpClientFactory httpClientFactory)
+        public WebApiController(ApplicationDbContext context, IHttpClientFactory httpClientFactory)
         {
+            _context = context;
             _httpClientFactory = httpClientFactory;
         }
 
@@ -41,6 +43,32 @@ namespace practiceNet70.Controllers
                 return new JsonResult(new JsonSerializerOptions { PropertyNamingPolicy = null });
             }
         }
-      
+
+        [HttpPost]
+        public async Task<ActionResult<Movie>>Movies([Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        {
+            _context.Movie.Add(movie);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(Movie), new { id = movie.Id }, movie);
+        }
+
+        [HttpGet("WebApi/Movies/{id?}")]
+        public async Task<ActionResult<IEnumerable<Movie>>>Movies(int? id)
+        {
+            if (id == null)
+            {
+                return await _context.Movie.ToListAsync();
+            }
+
+            var movie = await _context.Movie.FindAsync(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return new JsonResult(movie);
+        }
     }
 }
