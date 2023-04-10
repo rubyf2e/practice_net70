@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using practiceNet70.Data;
 using practiceNet70.Models;
 using practiceNet70.Models.Seeder;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient("Movies", httpClient =>
+{
+    httpClient.BaseAddress = new Uri("https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8");
+});
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
