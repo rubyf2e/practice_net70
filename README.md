@@ -4,6 +4,7 @@
 為了部署這個專案，我把 Ubuntu 從 16.04 升級到 18.04.   
 花了一天了解 .NET Framework 7.0 的基本架構和用法.    
 花了一天將專案部署在 ubuntu 上和爬文件
+花了一天自學寫的RESTful API
 
 
 ```
@@ -76,5 +77,28 @@ dotnet tool install -g dotnet-dump
 dotnet-dump ps
 ```
 
+## RESTful API
 
+### [GET]  /WebApi/GetImportedMovie
+串接公用電影資料的api   
+https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8 
+
+#### output
+![截圖 2023-04-16 下午4 48 01](https://user-images.githubusercontent.com/33201416/232287581-56f07769-88d6-4ef7-a756-862a364f89a8.png)
+
+
+### [GET]  /WebApi/Movies
+#### output
+![截圖 2023-04-16 下午4 45 16](https://user-images.githubusercontent.com/33201416/232287589-2259f549-a7c3-40a6-b5bf-2d55a330d0b8.png)
+
+
+### [GET]  /WebApi/Movies/{id}
+#### output
+![截圖 2023-04-16 下午4 45 09](https://user-images.githubusercontent.com/33201416/232287595-6fac799d-6939-4ef3-ab84-14777b567a40.png)
+
+
+
+### [POST] /WebApi/Movies
+#### payload
+![截圖 2023-04-16 下午4 42 32](https://user-images.githubusercontent.com/33201416/232287303-37c470e6-4811-41da-9b71-040406941782.png)
 
